@@ -23,16 +23,14 @@ jobs:
         with:
           node-version: 20
           cache: npm
-          cache-dependency-path: portifolio-gabriel/yarn.lock
+          cache-dependency-path: yarn.lock
       - run: npm install
-        working-directory: portifolio-gabriel
       - run: npm run build
-        working-directory: portifolio-gabriel
         env:
           VITE_BASE_PATH: /${{ github.event.repository.name }}/
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: portifolio-gabriel/dist
+          path: dist
 
   deploy:
     environment:

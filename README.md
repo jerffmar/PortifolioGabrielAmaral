@@ -5,7 +5,6 @@ Portfólio em React + Vite para o técnico Gabriel Amaral, estilizado com Tailwi
 ## Como rodar
 
 ```bash
-cd portifolio-gabriel
 npm install
 npm run dev
 ```
