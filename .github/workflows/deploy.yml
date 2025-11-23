@@ -25,12 +25,11 @@ jobs:
           cache: npm
       - run: npm install
       - run: npm run build
-        working-directory: portifolio-gabriel
         env:
-          VITE_BASE_PATH: /portifolio-gabriel/
+          VITE_BASE_PATH: /${{ github.event.repository.name }}/
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: portifolio-gabriel/dist
+          path: dist
 
   deploy:
     environment:
