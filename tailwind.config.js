@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
+  content: [
+    './portifolio-gabriel/index.html',
+    './portifolio-gabriel/src/**/*.{js,jsx,ts,tsx}',
+  ],
   theme: {
     extend: {},
   },
