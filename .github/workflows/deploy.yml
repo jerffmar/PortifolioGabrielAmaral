@@ -24,10 +24,18 @@ jobs:
           node-version: 20
           cache: npm
           cache-dependency-path: yarn.lock
+      - name: Definir base do Vite
+        id: base
+        run: |
+          if [ "${{ github.event.repository.name }}" = "${{ github.repository_owner }}.github.io" ]; then
+            echo "value=/" >> "$GITHUB_OUTPUT"
+          else
+            echo "value=/${{ github.event.repository.name }}/" >> "$GITHUB_OUTPUT"
+          fi
       - run: npm install
       - run: npm run build
         env:
-          VITE_BASE_PATH: /${{ github.event.repository.name }}/
+          VITE_BASE_PATH: ${{ steps.base.outputs.value }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

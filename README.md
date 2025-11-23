@@ -19,9 +19,10 @@ npm run dev
 ## Deploy no GitHub Pages
 
 1. Crie o repositório no GitHub e envie o código (`main`).
-2. O workflow já injeta o nome do repositório em `VITE_BASE_PATH`; ajuste somente se publicar em domínio diferente.
+2. O workflow detecta automaticamente se o repositório é `username.github.io` (base `/`) ou comum (`/<nome-do-repo>/`). Ajuste somente se publicar em outro caminho.
 3. No GitHub, acesse *Settings › Pages*, deixe “Source: GitHub Actions”.
 4. Cada push no `main` executará o workflow e atualizará o site; também é possível disparar manualmente via aba *Actions*.
+5. A URL final será `https://<usuario>.github.io/` para repositórios `username.github.io` ou `https://<usuario>.github.io/<nome-do-repo>/` para os demais.
 
 ## Próximos passos
 
